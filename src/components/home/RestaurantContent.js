@@ -4,6 +4,7 @@ import {
   GET_LOCATIONS,
   GET_FILTER_LOCATION,
 } from '../../utils/requests/locations';
+import Fade from 'react-reveal/Fade';
 
 import RestaurantCard from './RestaurantCard';
 import zIndex from '@material-ui/core/styles/zIndex';
@@ -62,7 +63,7 @@ const RestaurantContent = () => {
 
   return (
     <div id='restaurant' className="flex flex-col justify-center p-2 h-full">
-      <h1 className="text-4xl w-full mb-4 ">Estamos para ti</h1>
+      <Fade left><h1 className="text-4xl w-full mb-4 ">Estamos para ti</h1></Fade>
       <div className="flex flex-row content-center ">
         <div
           className=" border-black border-solid border-2 flex flex-row space-x-4 p-4 w-full hover:text-white hover:bg-black	"

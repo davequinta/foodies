@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Fade from 'react-reveal/Fade';
 import ThankuCard from '../thankuCard'
 import POST_CONTACT from '../../../utils/requests/contact'
 const ContactSectionContainer = () => {
@@ -26,7 +27,7 @@ const postMessage = async () => {
       <section className="relative p-12 bg-black h-130 lg:h-110  w-full text-white	text-center md:mb-4 flex flex-col items-center">
 
         {success ?<ThankuCard/>:<div className='justify-center'><div className="mb-8 md:mb-12">
-          <h1 className="text-4xl">Cuentanos tu experiencia </h1>
+          <Fade left><h1 className="text-4xl">Cuentanos tu experiencia </h1></Fade>
           <p className="text-xl text-center">
             Don't miss out on our great offers & receive deals from all our top
             restaurants via e-mail
@@ -85,10 +86,10 @@ const postMessage = async () => {
           </div>
           <div className="w-full mt-5 flex justify-center md:justify-end">
             <button
-              className="align-right bg-primary p-4 rounded-lg text-black"
+              className=" align-right bg-primary p-4 rounded-lg text-black"
               type="submit"
             >
-              <span>Enviar comentarios</span>
+              <span className='hover:bg-red-700'>Enviar comentarios</span>
             </button>
           </div>
         </form></div>}

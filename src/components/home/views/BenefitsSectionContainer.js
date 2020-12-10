@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { benefits } from '../../../utils/helpers';
 import BenefitCard from '../BenefitCard';
 import MarkedTitle from '../../common/MarkedTitle';
+import Fade from 'react-reveal/Fade';
 
 const BenefitsSectionContainer = () => {
   return (
@@ -16,11 +17,11 @@ const BenefitsSectionContainer = () => {
         </div>
       </section>
       <section className="relative w-full xl:w-3/5 flex flex-col justify-center pt-16">
-        <MarkedTitle
+       <Fade left> <MarkedTitle
           normalTextLower={'Obtén más beneficios'}
           markedText={'Descarga nuestra App'}
           home
-        />
+        /></Fade>
         <div className="flex flex-col lg:flex-row flex-wrap w-full justify-around relative mt-20">
           {benefits.map((benefit, index) => (
             <BenefitCard
