@@ -26,5 +26,5 @@ yarn install
 yarn dev 
 ```
 
-## Missing Task 
+## Missing Tasks
 * Integration with Maps
