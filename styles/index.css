@@ -49,7 +49,9 @@ input:hover {
 input:focus {
   outline: none;
 }
-
+button:focus {
+  outline: none;
+}
 textarea {
   background-color: transparent;
   color: #ffffff;

@@ -33,7 +33,7 @@ export default function Home() {
           bigContent={<MapCard />}
           smallContent={<RestaurantContent />}
         />
-        {/* <SliderSectionContainer /> */}
+        <SliderSectionContainer />
         <ContactSectionContainer />
         <BenefitsSectionContainer />
         <Footer/>

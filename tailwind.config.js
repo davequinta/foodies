@@ -11,6 +11,7 @@ module.exports = {
       ...theme('colors'),
       primary: '#FFD600',
       rescard: '#FFF1BF',
+      lightyellow: '#FFEA79'
     }),
     extend: {
       colors: {
