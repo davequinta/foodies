@@ -12,6 +12,8 @@ import FormControl from '@material-ui/core/FormControl';
 import SearchIcon from '@material-ui/icons/Search';
 import { makeStyles } from '@material-ui/core';
 import TextField from '@material-ui/core/TextField';
+import Res404card from '../emptystates/Res404card'
+
 
 const useStyles = makeStyles((theme) => ({
   margin: {
@@ -30,7 +32,7 @@ const RestaurantContent = () => {
   const [location, setLocation] = useState([]);
   const [type, setType] = useState('takeaway');
   const [query, setQuery] = useState('');
-
+  
   useEffect(() => {
     getInitialData();
   }, [type]);
@@ -40,6 +42,7 @@ const RestaurantContent = () => {
   }, [query]);
 
   const getInitialData = async () => {
+    setQuery('')
     const locationResponse = await GET_LOCATIONS(type);
     console.log('LOCATIONS', locationResponse);
     if (locationResponse.status) setLocation(locationResponse.message.data);
@@ -58,8 +61,8 @@ const RestaurantContent = () => {
   };
 
   return (
-    <div className="flex flex-col justify-center p-2">
-      <h1 className="text-4xl w-100 mb-4 ">Estamos para ti</h1>
+    <div className="flex flex-col justify-center p-2 h-full">
+      <h1 className="text-4xl w-full mb-4 ">Estamos para ti</h1>
       <div className="flex flex-row content-center ">
         <div
           className=" border-black border-solid border-2 flex flex-row space-x-4 p-4 w-full hover:text-white hover:bg-black	"
@@ -91,10 +94,10 @@ const RestaurantContent = () => {
             ),
           }}
         />      
-        <div className="flex flex-wrap items-center justify-center mt-3">
-        {location.map((location, index) => (
+        <div className=" flex-wrap items-center justify-center mt-3 flex flex-col p-2">
+      {location.length > 0 ?   location.map((location, index) => (
           <RestaurantCard {...location} key={`${location.id}-${index}`} />
-        ))}
+        )):<Res404card/>}
       </div>
     </div>
   );
