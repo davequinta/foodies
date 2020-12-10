@@ -10,7 +10,7 @@ Clone the repository
 
 ```bash
 yarn install 
-# or
+# then
 yarn dev 
 ```
 
