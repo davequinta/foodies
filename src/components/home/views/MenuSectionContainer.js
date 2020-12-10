@@ -3,7 +3,8 @@ import {
   GET_CATEGORIES,
   GET_MENU,
   GET_MENU_CATEGORY,
-  GET_FILTER_MENU
+  GET_FILTER_MENU,
+  GET_MENU_BY_PAGE
 } from '../../../utils/requests/menu';
 import ProductCard from '../../menu/ProductCard';
 import Input from '@material-ui/core/Input';
@@ -14,6 +15,7 @@ import SearchIcon from '@material-ui/icons/Search';
 import { makeStyles } from '@material-ui/core';
 import TextField from '@material-ui/core/TextField';
 import Food404card from '../../emptystates/Food404card'
+import Footer from '../../footer';
 
 const useStyles = makeStyles((theme) => ({
   margin: {
@@ -30,6 +32,11 @@ const MenuSectionContainer = () => {
 
   const [menu, setMenu] = useState([]);
   const [categories, setCategories] = useState([]);
+
+  const [range, setRange] = useState([]);
+  const [pageAction, setPageAction] = useState('');
+  const [currentPage, setCurrentPage] = useState('');
+
   const classes = useStyles();
 
   useEffect(() => {
@@ -49,12 +56,20 @@ const MenuSectionContainer = () => {
   };
 
   const getFullMenu = async () => {
+    let action='';
+    let url='';
     const menuResponse = await GET_MENU();
-        setFetchingApi(false);
-
     console.log('MENU', menuResponse);
-    if (menuResponse.status) setMenu(menuResponse.message.data);
+    setRange([...Array(menuResponse.message.meta.last_page).keys()]);
+    setCurrentPage(menuResponse.message.meta.current_page)
+    console.log(menuResponse.message.links)
+    action= menuResponse.message.links.next ?'Siguiente':'Prev'
+    setPageAction(action);
 
+    setFetchingApi(false);
+
+
+    if (menuResponse.status) setMenu(menuResponse.message.data);
   };
 
   const getMenuByCategory = async (id) => {
@@ -64,11 +79,24 @@ const MenuSectionContainer = () => {
   };
 
   
+  const getMenuByPage = async (pageNumber) => {
+    let action='';
+    const menuResponse = await GET_MENU_BY_PAGE(pageNumber);
+    console.log('MENU', menuResponse);
+    action= menuResponse.message.links.next ?'Siguiente':'Prev'
+    setCurrentPage(menuResponse.message.meta.current_page)
+
+    setPageAction(action);
+    if (menuResponse.status) setMenu(menuResponse.message.data);
+  };
+
+  
   const getMenuByFilter = async () => {
     const menuResponse = await GET_FILTER_MENU(query);
     console.log('MENU', menuResponse);
     if (menuResponse.status) setMenu(menuResponse.message.data);
   };
+  
 
   return (
     <section className=" w-full pt-10 ">
@@ -112,6 +140,12 @@ const MenuSectionContainer = () => {
           <ProductCard {...product} key={`${product.name}-${index}`} />
         )):<Food404card/>}
        
+      </div>
+
+   <div className="flex flex-row justify-center space-x-4">
+        {range.map((index)=> <div className=' cursor-pointer border-solid border-2 border-gray p-4 rounded-lg' onClick={()=> getMenuByPage(index+1)}>{index+1}</div>)}
+       
+        <div className='border-solid border-2 border-gray p-4 rounded-lg' >{pageAction}</div>
       </div>
     </section>
   );
