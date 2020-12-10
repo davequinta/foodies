@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link'
+import Fade from 'react-reveal/Fade';
 
 const DescriptionContent = () => (
   <div className="w-full h-full flex items-center">
@@ -8,8 +9,8 @@ const DescriptionContent = () => (
         <img src="/bg-line.png" />
       </div>
       <div className="flex flex-wrap text-left xl:px-20 px-10 py-23 mt-9">
-        <span className="text-xl w-100">Quien es foodie</span>
-        <p className="text-base text-gray-500 mt-10">
+        <Fade right><span className="text-3xl w-100">Quien es foodie</span></Fade>
+        <Fade bottom><p className="text-base text-gray-500 mt-10">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
           minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -17,7 +18,7 @@ const DescriptionContent = () => (
           reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
           pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
           culpa qui officia deserunt mollit anim id est laborum.
-        </p>
+        </p></Fade>
        <Link href="/#contact">
           <a><div className="flex mt-4 items-center">
                   <span className="text-xl text-black font-semibold">Contactanos</span>

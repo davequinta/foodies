@@ -1,4 +1,5 @@
 import React from 'react';
+import Fade from 'react-reveal/Fade';
 
 const BenefitCard = ({ index, title, description }) => {
   return (
@@ -6,8 +7,8 @@ const BenefitCard = ({ index, title, description }) => {
       <div className="rounded-full h-16 w-16 flex items-center justify-center bg-primary text-white font-bold text-3xl">
         <span>{`0${index + 1}`}</span>
       </div>
-      <h5 className="my-4 font-extrabold text-2xl">{title}</h5>
-      <p className="text-xl">{description}</p>
+      <Fade top><h5 className="my-4 font-extrabold text-2xl">{title}</h5></Fade>
+      <Fade bottom><p className="text-xl">{description}</p></Fade>
     </div>
   );
 };
