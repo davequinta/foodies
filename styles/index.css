@@ -1,0 +1,56 @@
+@tailwind base;
+
+/* Write your own custom base styles here */
+
+/* Start purging... */
+@tailwind components;
+/* Stop purging. */
+
+html,
+body {
+  @apply bg-white;
+}
+
+/* Write your own custom component styles here */
+.btn-blue {
+  @apply px-4 py-2 font-bold text-white bg-blue-500 rounded;
+}
+
+@font-face {
+  font-family: 'DrukTextWideBold';
+  src: local('DrukTextWideBold'),
+    url('../src/fonts/DrukTextWide-Bold.ttf') format('truetype');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'SyneBold';
+  src: local('SyneBold'), url('../src/fonts/Syne-Bold.ttf') format('truetype');
+  font-weight: bold;
+}
+/* Start purging... */
+@tailwind utilities;
+/* Stop purging. */
+
+/* Your own custom utilities */
+
+/* #FFD600, 100% */
+
+input {
+  border: 1px solid #ffffff;
+  border-radius: 4px;
+  background-color: transparent;
+  color: #ffffff;
+}
+input:hover {
+  border: 1px solid #ffc700;
+}
+
+input:focus {
+  outline: none;
+}
+
+textarea {
+  background-color: transparent;
+  color: #ffffff;
+}

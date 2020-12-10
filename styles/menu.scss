@@ -1,0 +1,156 @@
+$accent: #ffd600;
+
+.menu-item {
+  display: inline;
+  margin-left: 17px;
+  font-size: 25px;
+  line-height: 30px;
+}
+.menu {
+  input {
+    opacity: 0;
+    position: absolute;
+    width: 33px;
+    height: 32px;
+    z-index: 40;
+  }
+
+  span {
+    display: block;
+    width: 33px;
+    height: 3px;
+    margin-bottom: 5px;
+    position: relative;
+
+    background: #000;
+    border-radius: 3px;
+
+    z-index: 30;
+
+    transform-origin: 4px 0px;
+
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
+      background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+  }
+
+  span:first-child {
+    transform-origin: 0% 0%;
+  }
+
+  span:nth-last-child(2) {
+    transform-origin: 0% 100%;
+  }
+
+  input:checked ~ span {
+    opacity: 1;
+    transform: rotate(45deg) translate(0, -1px);
+    background: #232323;
+  }
+
+  input:checked ~ span:last-child {
+    opacity: 1;
+    transform: rotate(-45deg) translate(-1px, 0);
+    background: #232323;
+  }
+
+  input:checked ~ span:nth-of-type(2) {
+    opacity: 0;
+    transform: rotate(0deg) scale(0.2, 0.2);
+  }
+}
+
+.home-modal {
+  background-color: white;
+  h1.title {
+    font-size: 25px;
+    line-height: 25px;
+    margin: 47px 16px 0;
+  }
+  ul {
+    margin: 51px 0 30px;
+  }
+  a {
+    font-family: 'SyneBold';
+  }
+  &.dark {
+    background-color: black;
+    h1 {
+      color: $accent;
+    }
+    a {
+      color: white;
+    }
+    ul {
+      span {
+        color: white;
+        font-family: 'SyneBold';
+        font-size: 25px;
+        line-height: 30px;
+      }
+    }
+    .link:after {
+      background-color: $accent !important;
+    }
+    ~ .menu {
+      input:checked ~ span {
+        background: white;
+      }
+
+      input:checked ~ span:last-child {
+        opacity: 1;
+        transform: rotate(-45deg) translate(-1px, 0);
+        background: white;
+      }
+    }
+  }
+}
+
+.menu-modal {
+  background-color: white;
+  h1.title {
+    font-size: 25px;
+    line-height: 25px;
+    margin: 47px 16px 0;
+  }
+  ul {
+    margin: 51px 0 30px;
+  }
+  a {
+    font-family: 'SyneBold';
+  }
+  &.dark {
+    background-color: black;
+    h1 {
+      color: $accent;
+    }
+    a {
+      color: white;
+    }
+    ul {
+      span {
+        color: white;
+        font-family: 'SyneBold';
+        font-size: 25px;
+        line-height: 30px;
+      }
+    }
+    .link:after {
+      background-color: $accent !important;
+    }
+    ~ .menu {
+      input:checked ~ span {
+        background: white;
+      }
+
+      input:checked ~ span:last-child {
+        opacity: 1;
+        transform: rotate(-45deg) translate(-1px, 0);
+        background: white;
+      }
+    }
+  }
+}
+
+.menu-open {
+  height: 436px;
+}
