@@ -1,6 +1,9 @@
-# Tailwind CSS example
+#Hosted in Vercel:
+ [Link to webpage](https://foodies-landing-test.vercel.app/)
 
-This is an example of using [Tailwind CSS](https://tailwindcss.com) in a Next.js project.
+# Boostrauped using:
+
+ [Tailwind CSS](https://tailwindcss.com) in a Next.js project.
 
 
 ## How to use
