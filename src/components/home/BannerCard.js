@@ -8,7 +8,7 @@ const BannerCard = () => {
           LA COMIDA ES <span className="text-yellow-300"> NUESTRO ARTE</span>
         </span>
       </div>
-      <img src="/banner-1.png" className="h-100 w-120 object-cover " />
+      <img src="/banner-1.png" className="h-100 w-full object-cover " />
     </div>
   );
 };

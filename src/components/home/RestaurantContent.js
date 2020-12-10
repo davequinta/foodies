@@ -61,7 +61,7 @@ const RestaurantContent = () => {
   };
 
   return (
-    <div className="flex flex-col justify-center p-2 h-full">
+    <div id='restaurant' className="flex flex-col justify-center p-2 h-full">
       <h1 className="text-4xl w-full mb-4 ">Estamos para ti</h1>
       <div className="flex flex-row content-center ">
         <div
@@ -80,7 +80,7 @@ const RestaurantContent = () => {
         </div>
       </div>
  <TextField
-          className={[classes.margin, 'max-w-md']}
+          className={['w-full']}
           id="input-with-icon-textfield"
           variant="outlined"
           value={query}

@@ -13,6 +13,7 @@ import FormControl from '@material-ui/core/FormControl';
 import SearchIcon from '@material-ui/icons/Search';
 import { makeStyles } from '@material-ui/core';
 import TextField from '@material-ui/core/TextField';
+import Food404card from '../../emptystates/Food404card'
 
 const useStyles = makeStyles((theme) => ({
   margin: {
@@ -45,13 +46,15 @@ const MenuSectionContainer = () => {
     if (categoriesResponse.status)
       setCategories(categoriesResponse.message.data);
     getFullMenu();
-    setFetchingApi(false);
   };
 
   const getFullMenu = async () => {
     const menuResponse = await GET_MENU();
+        setFetchingApi(false);
+
     console.log('MENU', menuResponse);
     if (menuResponse.status) setMenu(menuResponse.message.data);
+
   };
 
   const getMenuByCategory = async (id) => {
@@ -105,9 +108,10 @@ const MenuSectionContainer = () => {
         </div>
       </section>
       <div className="flex flex-wrap items-center justify-center mt-10">
-        {menu.map((product, index) => (
+        {menu.length > 0 && !fetchingApi ? menu.map((product, index) => (
           <ProductCard {...product} key={`${product.name}-${index}`} />
-        ))}
+        )):<Food404card/>}
+       
       </div>
     </section>
   );

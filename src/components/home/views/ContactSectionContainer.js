@@ -2,7 +2,7 @@ import React from 'react';
 
 const ContactSectionContainer = () => {
   return (
-    <div className="flex flex-col xl:flex-row h-130 lg:h-110 mb-23">
+    <div id='contact' className="flex flex-col xl:flex-row h-130 lg:h-110 mb-23">
       <section className="relative p-12 bg-black h-130 lg:h-110  w-full text-white	text-center md:mb-4 flex flex-col items-center">
         <div className="mb-8 md:mb-12">
           <h1 className="text-4xl">Cuentanos tu experiencia </h1>

@@ -16,13 +16,13 @@ const links2 = [
 export default function Footer() {
   return (
     <footer className='grid grid-cols-1 divide-y divide-yellow-500  md:p-7 '>
-        <div className='flex flex-col items-center justify-between md:flex-row p-8'>
+        <div className='flex flex-col items-center justify-between md:flex-row md:p-8'>
             <h1 className='text-left text-4xl mb-8 md:mb-0'>
             Foodies
              </h1>
-              <ul className="flex items-center justify-between md: space-x-4">
-             <img src="footer/app-store.png" alt="AppStore Icon" />
-          <img src="footer/play-store.png" alt="PlayStore Icon" />
+              <ul className="flex items-center justify-between md: space-x-2 mr-4">
+                      <img src="footer/app-store.png" alt="AppStore Icon" className='w-40'/>
+                    <img src="footer/play-store.png" alt="PlayStore Icon"  className='w-40'/>
         </ul>
         </div>
        <ul className="flex flex-col items-center md:flex-row space-x-6 p-2">

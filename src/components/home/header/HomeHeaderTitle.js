@@ -1,5 +1,6 @@
 import React from 'react';
 import MarkedTitle from '../../common/MarkedTitle';
+import Link from 'next/link'
 
 const HomeHeaderTitle = () => {
   return (
@@ -16,10 +17,13 @@ const HomeHeaderTitle = () => {
           Estamos a punto de descubrir un mundo lleno de sabores y de emociones
           inigualables.
         </p>
-        <div className="flex mt-4 items-center">
-          <span className="text-xl text-black font-semibold">Encuentranos</span>
-          <img src="/arrow-right.png" className="w-auto h-5 ml-5" />
-        </div>
+        <Link href="/#restaurant">
+          <a><div className="flex mt-4 items-center">
+                  <span className="text-xl text-black font-semibold">Encuentranos</span>
+                  <img src="/arrow-right.png" className="w-auto h-5 ml-5" />
+                </div></a>
+        </Link>
+        
       </div>
     </div>
   );
