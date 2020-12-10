@@ -24,7 +24,7 @@ const postMessage = async () => {
   return (
     <div id='contact' className="flex flex-col xl:flex-row h-130 lg:h-110 mb-23">
 
-      <section className="relative p-12 bg-black h-130 lg:h-110  w-full text-white	text-center md:mb-4 flex flex-col items-center">
+      <section className="relative p-12 bg-black h-130 lg:h-110  w-full text-white	text-center md:mb-4 flex flex-col items-center pt-20">
 
         {success ?<ThankuCard/>:<div className='justify-center'><div className="mb-8 md:mb-12">
           <Fade left><h1 className="text-4xl">Cuentanos tu experiencia </h1></Fade>
@@ -86,10 +86,10 @@ const postMessage = async () => {
           </div>
           <div className="w-full mt-5 flex justify-center md:justify-end">
             <button
-              className=" align-right bg-primary p-4 rounded-lg text-black"
+              className=" hover:bg-lightyellow align-right bg-primary p-4 rounded-lg text-black"
               type="submit"
             >
-              <span className='hover:bg-red-700'>Enviar comentarios</span>
+              <span className=''>Enviar comentarios</span>
             </button>
           </div>
         </form></div>}
