@@ -4,6 +4,7 @@ import HeaderSectionContainer from '../src/components/home/views/HeaderSectionCo
 import MenuSectionContainer from '../src/components/home/views/MenuSectionContainer';
 
 import MenuNavbar from '../src/components/MenuNavbar';
+import Footer from '../src/components/footer';
 
 export default function Menu() {
   return (
@@ -15,6 +16,8 @@ export default function Menu() {
         menu
       />
       <MenuSectionContainer />
+            <Footer/>
+
     </div>
   );
 }
